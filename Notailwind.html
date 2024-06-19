@@ -8,9 +8,10 @@
         function validation(){
             console.log("Hello world");
             var password = document.getElementById('Password').value;
-            var email= document.getElementById('Email');
-            var name = document.getElementById('name');
+            var email= document.getElementById('Email').value;
+            var name = document.getElementById('name').value;
             var Confirm =document.getElementById('Confirm').value;
+            var age = document.getElementById('Age').value;
             var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             var namePattern = /^[A-Za-z]+$/;
             if(password.length < 8){
@@ -23,6 +24,10 @@
             }
             if(!namePattern.test(name)){
                 alert("Name pattern not correct");
+                return false;
+            }
+            if(isNaN(Age)){
+                alert("Age is not a number.");
                 return false;
             }
 
@@ -41,7 +46,7 @@
         <input type="text" name="name" id="name" required><br>
 
         <label for="Age">Age:</label>
-        <input type="number" name="Age" id="Age" required><br>
+        <input type="text" name="Age" id="Age" required><br>
 
         <label for="Email">Email:</label>
         <input type="" name="Email" id="Email" required> <br><!--Email property halyo vane ya tya browser le nai check hanxa so we never see the use of our custom validation. Exam ma chai halda hunxa chigge muji-->
