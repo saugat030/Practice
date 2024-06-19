@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validation(){
+            console.log("Hello world");
+            var password = document.getElementById('Password').value;
+            var email= document.getElementById('Email');
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var Confirm =document.getElementById('Confirm').value;
+            if (password.length < 8){
+                alert("password length in smaller than 8");
+                return false;
+            }
+            if(password !==Confirm){
+                alert("Password does not match");
+                return false;
+            }
+
+            if(!emailPattern.test(email)){
+                alert("Enter a valid Email.");
+                return false;
+            }
+            
+                return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validation()">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" id="Age" required>
+
+        <label for="Email">Email:</label>
+        <input type="" name="Email" id="Email" required> <!--Email property halyo vane ya tya browser le nai check hanxa so we never see the use of our custom validation. Exam ma chai halda hunxa chigge muji-->
+
+        <label for="Password">Password</label>
+        <input type="password" name="Password" id="Password" required>
+
+        <label for="Confirm">Confirm Password</label>
+        <input type="password" name="Confirm" id="Confirm" required>
+
+        <button type="submit" value="submit">submit</button>
+
+    </form>
+    
+</body>
+</html>
