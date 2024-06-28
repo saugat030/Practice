@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .try {
+      @apply bg-green-500 fixed right-0 h-full;
+  }
+}
